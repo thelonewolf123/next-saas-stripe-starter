@@ -1,20 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { UserSubscriptionPlan } from "@/types";
+import Link from 'next/link';
+import { useState } from 'react';
 
-import { pricingData } from "@/config/subscriptions";
-import { cn } from "@/lib/utils";
-import { useSigninModal } from "@/hooks/use-signin-modal";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { BillingFormButton } from "@/components/forms/billing-form-button";
-import { HeaderSection } from "@/components/shared/header-section";
-import { Icons } from "@/components/shared/icons";
+import { BillingFormButton } from '@/components/forms/billing-form-button';
+import { HeaderSection } from '@/components/shared/header-section';
+import { Icons } from '@/components/shared/icons';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { pricingData } from '@/config/subscriptions';
+import { useSigninModal } from '@/hooks/use-signin-modal';
+import { cn } from '@/lib/utils';
+import { UserSubscriptionPlan } from '@/types';
 
-import { SubscriptionPlan } from "../types/index";
-import MaxWidthWrapper from "./shared/max-width-wrapper";
+import { SubscriptionPlan } from '../types/index';
+import MaxWidthWrapper from './shared/max-width-wrapper';
 
 interface PricingCardsProps {
   userId?: string;
@@ -178,9 +178,9 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
           Email{" "}
           <a
             className="font-medium text-primary hover:underline"
-            href="mailto:support@saas-starter.com"
+            href="mailto:support@cyberkrypts.dev"
           >
-            support@saas-starter.com
+            support@cyberkrypts.dev
           </a>{" "}
           for to contact our support team.
           <br />
