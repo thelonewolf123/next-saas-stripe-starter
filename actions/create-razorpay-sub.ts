@@ -17,7 +17,7 @@ const PLAN_ID_MAP = {
   },
 };
 
-export async function createRazorpayOrder(
+export async function createRazorpaySubscription(
   plan: "basic" | "pro",
   period: "monthly" | "yearly",
 ) {

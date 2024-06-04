@@ -1,5 +1,6 @@
-import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod";
+import { z } from 'zod';
+
+import { createEnv } from '@t3-oss/env-nextjs';
 
 export const env = createEnv({
   server: {
@@ -14,6 +15,7 @@ export const env = createEnv({
     RESEND_API_KEY: z.string().min(1),
     RAZORPAY_KEY_ID: z.string().min(1),
     RAZORPAY_KEY_SECRET: z.string().min(1),
+    STRIPE_WEBHOOK_SECRET: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_APP_URL: z.string().min(1),
@@ -21,6 +23,12 @@ export const env = createEnv({
     NEXT_PUBLIC_RAZORPAY_PRO_YEARLY_PLAN_ID: z.string().min(1),
     NEXT_PUBLIC_RAZORPAY_BASIC_MONTHLY_PLAN_ID: z.string().min(1),
     NEXT_PUBLIC_RAZORPAY_BASIC_YEARLY_PLAN_ID: z.string().min(1),
+
+    // stripe
+    NEXT_PUBLIC_STRIPE_BUSINESS_MONTHLY_PLAN_ID: z.string().min(1),
+    NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID: z.string().min(1),
+    NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PLAN_ID: z.string().min(1),
+    NEXT_PUBLIC_STRIPE_PRO_YEARLY_PLAN_ID: z.string().min(1),
   },
   runtimeEnv: {
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
@@ -31,6 +39,8 @@ export const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
+
     // RAZOR-Pay
     RAZORPAY_KEY_ID: process.env.RAZORPAY_KEY_ID,
     RAZORPAY_KEY_SECRET: process.env.RAZORPAY_KEY_SECRET,
@@ -42,5 +52,15 @@ export const env = createEnv({
       process.env.NEXT_PUBLIC_RAZORPAY_BASIC_MONTHLY_PLAN_ID,
     NEXT_PUBLIC_RAZORPAY_BASIC_YEARLY_PLAN_ID:
       process.env.NEXT_PUBLIC_RAZORPAY_BASIC_YEARLY_PLAN_ID,
+
+    // stripe
+    NEXT_PUBLIC_STRIPE_BUSINESS_MONTHLY_PLAN_ID:
+      process.env.NEXT_PUBLIC_STRIPE_BUSINESS_MONTHLY_PLAN_ID,
+    NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID:
+      process.env.NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID,
+    NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PLAN_ID:
+      process.env.NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PLAN_ID,
+    NEXT_PUBLIC_STRIPE_PRO_YEARLY_PLAN_ID:
+      process.env.NEXT_PUBLIC_STRIPE_PRO_YEARLY_PLAN_ID,
   },
 });

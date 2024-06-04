@@ -1,11 +1,11 @@
 "use client";
 
-import { useTransition } from "react";
-import { generateUserStripe } from "@/actions/generate-user-stripe";
-import { SubscriptionPlan, UserSubscriptionPlan } from "@/types";
+import { useTransition } from 'react';
 
-import { Button } from "@/components/ui/button";
-import { Icons } from "@/components/shared/icons";
+import { generateUserStripe } from '@/actions/generate-user-stripe';
+import { Icons } from '@/components/shared/icons';
+import { Button } from '@/components/ui/button';
+import { SubscriptionPlan, UserSubscriptionPlan } from '@/types';
 
 interface BillingFormButtonProps {
   offer: SubscriptionPlan;
@@ -21,7 +21,7 @@ export function BillingFormButton({
   let [isPending, startTransition] = useTransition();
   const generateUserStripeSession = generateUserStripe.bind(
     null,
-    offer.stripeIds[year ? "yearly" : "monthly"],
+    offer.stripeIds[year ? "yearly" : "monthly"] || "",
   );
 
   const stripeSessionAction = () =>

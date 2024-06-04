@@ -8,8 +8,8 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -33,7 +33,7 @@
     ".next/types/**/*.ts",
     ".contentlayer/generated",
     "contentlayer.config.ts",
-    "env.mjs"
+    "env.mjs.ts"
   ],
   "exclude": ["node_modules"]
 }
