@@ -1,10 +1,10 @@
 "use server";
 
-import { auth } from "@/auth";
-import Razorpay from "razorpay";
-import { v4 } from "uuid";
+import Razorpay from 'razorpay';
+import { v4 } from 'uuid';
 
-import { env } from "@/env.mjs";
+import { auth } from '@/auth';
+import { env } from '@/env.mjs';
 
 const PLAN_ID_MAP = {
   basic: {
@@ -29,19 +29,10 @@ export async function createRazorpaySubscription(
     }
 
     var instance = new Razorpay({
-      key_id: "YOUR_KEY_ID",
-      key_secret: "YOUR_SECRET",
+      key_id: env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+      key_secret: env.RAZORPAY_KEY_SECRET,
     });
-    const receptId = `sub_rcptid_${v4()}`;
 
-    var options = {
-      amount: 50000, // amount in the smallest currency unit
-      currency: "INR",
-      receipt: receptId,
-    };
-    instance.orders.create(options, function (err, order) {
-      console.log(order);
-    });
     const planId = PLAN_ID_MAP[plan][period];
 
     const orderId = await instance.subscriptions.create({

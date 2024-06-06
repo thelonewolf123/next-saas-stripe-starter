@@ -13,12 +13,14 @@ export const env = createEnv({
     GITHUB_OAUTH_TOKEN: z.string().min(1),
     DATABASE_URL: z.string().min(1),
     RESEND_API_KEY: z.string().min(1),
-    RAZORPAY_KEY_ID: z.string().min(1),
     RAZORPAY_KEY_SECRET: z.string().min(1),
     STRIPE_WEBHOOK_SECRET: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_APP_URL: z.string().min(1),
+
+    // RAZOR-Pay
+    NEXT_PUBLIC_RAZORPAY_KEY_ID: z.string().min(1),
     NEXT_PUBLIC_RAZORPAY_PRO_MONTHLY_PLAN_ID: z.string().min(1),
     NEXT_PUBLIC_RAZORPAY_PRO_YEARLY_PLAN_ID: z.string().min(1),
     NEXT_PUBLIC_RAZORPAY_BASIC_MONTHLY_PLAN_ID: z.string().min(1),
@@ -42,7 +44,7 @@ export const env = createEnv({
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
 
     // RAZOR-Pay
-    RAZORPAY_KEY_ID: process.env.RAZORPAY_KEY_ID,
+    NEXT_PUBLIC_RAZORPAY_KEY_ID: process.env.RAZORPAY_KEY_ID,
     RAZORPAY_KEY_SECRET: process.env.RAZORPAY_KEY_SECRET,
     NEXT_PUBLIC_RAZORPAY_PRO_MONTHLY_PLAN_ID:
       process.env.NEXT_PUBLIC_RAZORPAY_PRO_MONTHLY_PLAN_ID,
