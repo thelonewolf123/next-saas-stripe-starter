@@ -1,7 +1,5 @@
 const { withContentlayer } = require("next-contentlayer2");
 
-import("./env.mjs");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
