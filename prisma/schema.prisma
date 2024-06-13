@@ -61,6 +61,10 @@ model User {
   stripePriceId          String?   @map(name: "stripe_price_id")
   stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
 
+  razorpayPaymentId        String?   @map(name: "razorpay_payment_id")
+  razorpayCurrentPeriodEnd DateTime? @map(name: "razorpay_current_period_end")
+  razorpayPlanId           String?   @map(name: "razorpay_plan_id")
+
   @@map(name: "users")
 }
 

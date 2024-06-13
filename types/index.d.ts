@@ -66,6 +66,10 @@ export type SubscriptionPlan = {
     monthly: string | null;
     yearly: string | null;
   };
+  razorpayIds: {
+    monthly: string | null;
+    yearly: string | null;
+  };
 };
 
 export type UserSubscriptionPlan = SubscriptionPlan &
@@ -87,4 +91,4 @@ export type InfoLdg = {
   image: string;
   description: string;
   list: InfoList[];
-}
+};
