@@ -14,6 +14,9 @@
     "lint": "next lint",
     "preview": "next build && next start",
     "postinstall": "prisma generate",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate status --schema=./prisma/schema.prisma",
+    "db:push": "prisma db push",
     "email": "email dev --dir emails --port 3333"
   },
   "dependencies": {
